@@ -2,6 +2,11 @@ import java.time.LocalDateTime
 import java.util.*
 
 data class Time(val time: LocalDateTime)
+
+fun executeCalc(num1: Int, num2: Int, function: CalcJava) {
+    println(function.calc(num1, num2))
+}
+
 fun main() {
     // インスタンスを生成して使用する感覚で Java のコードを呼び出せる
     val hello = HelloByJava()
@@ -28,4 +33,11 @@ fun main() {
     user.name = "Taro"
     println(user.id)
     println(user.name)
+
+    // SAM 変換
+    // Java の関数型インタフェースにラムダ式を渡すことで、SAM インタフェースに変換する
+    val function = CalcJava { num1, num2 -> num1 + num2 }
+    println(function.calc(1, 3))
+
+    executeCalc(1, 3, function)
 }

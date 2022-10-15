@@ -17,4 +17,7 @@ fun main() {
 
     val dog = DogKotlin()
     dog.cry()
+
+    val greeter = GreeterImplKotlin()
+    greeter.hello()
 }

@@ -14,4 +14,7 @@ fun main() {
     // Java の標準ライブラリのクラスを型として使用することもできる
     val now = Time(LocalDateTime.now())
     println(now)
+
+    val dog = DogKotlin()
+    dog.cry()
 }

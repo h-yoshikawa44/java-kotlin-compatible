@@ -20,4 +20,12 @@ fun main() {
 
     val greeter = GreeterImplKotlin()
     greeter.hello()
+
+    // Java 側でプロパティを private にしてアクセサメソッドを定義しているクラスでも、
+    // Kotlin では直接アクセスしているかのように書ける（内部的には getter、setter を呼んでいる）
+    val user = UserJava()
+    user.id = 100
+    user.name = "Taro"
+    println(user.id)
+    println(user.name)
 }
